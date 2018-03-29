@@ -1,0 +1,198 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Parameter Defaults &#8212; pyStim 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Static Stim" href="StaticStim.html" />
+    <link rel="prev" title="StimProgram module" href="pyStim.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="StaticStim.html" title="Static Stim"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pyStim.html" title="StimProgram module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyStim 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pyStim.html" accesskey="U">StimProgram module</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pyStim.html"
+                        title="previous chapter">StimProgram module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="StaticStim.html"
+                        title="next chapter">Static Stim</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/StimDefaults.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="parameter-defaults">
+<h1>Parameter Defaults<a class="headerlink" href="#parameter-defaults" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyStim.StimDefaults">
+<em class="property">class </em><code class="descclassname">pyStim.</code><code class="descname">StimDefaults</code><span class="sig-paren">(</span><em>shape='circle'</em>, <em>fill_mode='uniform'</em>, <em>orientation=0</em>, <em>size=None</em>, <em>outer_diameter=75</em>, <em>inner_diameter=40</em>, <em>check_size=None</em>, <em>num_check=64</em>, <em>check_type='board'</em>, <em>delay=0</em>, <em>duration=0.5</em>, <em>location=None</em>, <em>timing='step'</em>, <em>intensity=1</em>, <em>alpha=1</em>, <em>color=None</em>, <em>color_mode='intensity'</em>, <em>image_channel='all'</em>, <em>fill_seed=1</em>, <em>move_seed=1</em>, <em>speed=10</em>, <em>num_dirs=4</em>, <em>start_dir=0</em>, <em>start_radius=300</em>, <em>travel_distance=50</em>, <em>ori_with_dir=False</em>, <em>intensity_dir='both'</em>, <em>contrast_opp='opposite'</em>, <em>frequency=1</em>, <em>sf=1</em>, <em>phase=None</em>, <em>phase_speed=None</em>, <em>contrast_channel='green'</em>, <em>movie_filename=None</em>, <em>movie_size=None</em>, <em>period_mod=1</em>, <em>image_size=None</em>, <em>image_filename=None</em>, <em>table_filename=None</em>, <em>jitter_filename=None</em>, <em>table_type='polar'</em>, <em>trigger=False</em>, <em>move_delay=0</em>, <em>num_jumps=5</em>, <em>shuffle=False</em>, <em>blend_jumps=False</em>, <em>force_stop=0</em>, <em>end_delay=0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#StimDefaults"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.StimDefaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Super class to hold parameter defaults. GUI passes dictionary of all
+parameters, whether used to make stim or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>shape</strong> (<em>string</em>) – Shape of the stim, ‘circle’, ‘rectangle, or ‘annulus’.</li>
+<li><strong>fill_mode</strong> (<em>string</em>) – How the stim is filled. Can be ‘uniform’,
+‘sine’, ‘square’, ‘concentric’, ‘checkerboard’, ‘random’, ‘image’,
+or ‘movie’.</li>
+<li><strong>orientation</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – Orientation of the stim, in degrees.</li>
+<li><strong>size</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – Size of the stim, as an x, y list.</li>
+<li><strong>outer_diameter</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – Size of circle, or outer diameter of
+annulus, in micrometers.</li>
+<li><strong>inner_diameter</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – Inner diameter of annulus, in micrometers.</li>
+<li><strong>check_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – Size of each check in a checkerboard or randomly
+filled board, as an x, y list in micrometers.</li>
+<li><strong>num_check</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – The number of checks in each direction.</li>
+<li><strong>delay</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – The time to between the first frame and the stim
+appearing on screen. Rounds up to the nearest frame.</li>
+<li><strong>end_delay</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – The time to between the last frame stim
+appearing on screen and the end of frames flipping. Rounds up to the
+nearest frame.</li>
+<li><strong>duration</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – The duration for which the stim will animated.
+Rounds up to the nearest frame.</li>
+<li><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – Coordinates of the stim, as an x, y list.</li>
+<li><strong>timing</strong> (<em>string</em>) – How the stim appears on screen over time. For
+‘step’, the stim appears immediately. Other options include ‘sine’,
+‘sawtooth’, ‘square’, and ‘linear’.</li>
+<li><strong>period_mod</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – For cyclic timing modes, the number of cycles.</li>
+<li><strong>alpha</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – The transparency of the of the stim, between 0 and 1.
+Does not apply to checkerboard or random fill stims, or images and movies.</li>
+<li><strong>color_mode</strong> (<em>string</em>) – The way in which the color of the stim is
+determined. Can be either ‘intensity’, or ‘rgb’.</li>
+<li><strong>contrast_channel</strong> (<em>string</em>) – The color channel in which color is
+displayed in intensity mode. For the RGB color mode, contrast channel is
+only used if a fill other than uniform is specified.</li>
+<li><strong>intensity</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – The color of the stim relative to background,
+between -1 and 1. For  fills, the color will fluctuate between high and
+low values of the  specified intensity relative to background, and thus
+background values on either extreme must use low intensities or risk
+hitting the color ceiling/floor of the monitor.</li>
+<li><strong>color</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – RGB color values of the stim, as a list of 3 values
+between -1 and 1.</li>
+<li><strong>fill_seed</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – The seed for the random number generator for
+random fills.</li>
+<li><strong>move_seed</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – The seed for the random number generator for
+random movement.</li>
+<li><strong>speed</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – The speed of moving stims, in micrometers per second.</li>
+<li><strong>num_dirs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – The number of directions radially moving stims will
+travel in.</li>
+<li><strong>start_dir</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – The start direction for radially moving stims.</li>
+<li><strong>start_radius</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – The start radius for radially moving stims.</li>
+<li><strong>move_delay</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – The amount of wait time between each move
+direction.</li>
+<li><strong>travel_distance</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – The distance that randomly moving stims
+will travel before choosing a new direction.</li>
+<li><strong>intensity_dir</strong> (<em>string</em>) – Whether to go one or both directions relative to background.</li>
+<li><strong>contrast_opp</strong> (<em>string</em>) – How the opposite of a color is determined.
+Black means go to black, opposite indicates increase other color channels
+as primary channel decreases.</li>
+<li><strong>sf</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – The spatial frequency of a stim texture.</li>
+<li><strong>phase</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – The offset of texture in the stim. Units are in
+cycles, so integer phases will result in no discernible change.</li>
+<li><strong>movie_filename</strong> (<em>string</em>) – File path of the movie to be displayed.</li>
+<li><strong>movie_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – Size of the movie, as an x, y list, in micrometers.
+Keep aspect ratio or movie will be distorted.</li>
+<li><strong>image_filename</strong> (<em>string</em>) – File path of the image to be displayed.</li>
+<li><strong>image_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – Size of the image, as an x, y list, in micrometers.
+Keep aspect ratio or movie will be distorted.</li>
+<li><strong>table_filename</strong> (<em>string</em>) – File path of the table to be used for
+coordinates.</li>
+<li><strong>trigger</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) – Whether or not to send a trigger for the stim.</li>
+<li><strong>num_jumps</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – </li>
+<li><strong>jump_delay</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – </li>
+<li><strong>force_stop</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – time at which stim should end, overrides all
+other timing. Useful for moving and table stims.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="StaticStim.html" title="Static Stim"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pyStim.html" title="StimProgram module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyStim 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pyStim.html" >StimProgram module</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Alexander Tomlinson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+    </div>
+  </body>
+</html>
