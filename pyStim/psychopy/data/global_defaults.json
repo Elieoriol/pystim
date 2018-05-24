@@ -1,0 +1,84 @@
+{
+    "DLP2": {
+        "display_size": [
+            400,
+            400
+        ],
+        "position": [
+            1520,
+            0
+        ],
+        "offset": [
+            0,
+            0
+        ],
+        "scale": [
+            1,
+            1
+        ],
+        "pix_per_micron": 1,
+        "frame_rate": 60,
+        "protocol_reps": 1,
+        "trigger_wait": 0,
+        "background": [
+            0,
+            0,
+            0
+        ],
+        "pref_dir": -1,
+        "screen_num": 2,
+        "gamma_correction": "default",
+        "fullscreen": true,
+        "small_win": false,
+        "small_win_num": 0,
+        "warp": true,
+        "eyepoint": [
+            0.3,
+            0.8
+        ],
+        "framepack": false,
+        "log": true,
+        "capture": false
+    },
+    "DLP": {
+        "display_size": [
+            400,
+            400
+        ],
+        "position": [
+            1520,
+            0
+        ],
+        "offset": [
+            0,
+            0
+        ],
+        "scale": [
+            1,
+            1
+        ],
+        "pix_per_micron": 1,
+        "frame_rate": 60,
+        "protocol_reps": 1,
+        "trigger_wait": 0,
+        "background": [
+            0,
+            0,
+            0
+        ],
+        "pref_dir": -1,
+        "screen_num": 2,
+        "gamma_correction": "default",
+        "fullscreen": true,
+        "small_win": false,
+        "small_win_num": 0,
+        "warp": true,
+        "eyepoint": [
+            0.5,
+            0.5
+        ],
+        "framepack": true,
+        "log": true,
+        "capture": false
+    }
+}

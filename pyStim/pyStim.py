@@ -28,6 +28,7 @@ from psychopy import visual, core, event
 from psychopy.tools.coordinatetools import pol2cart
 from psychopy.tools.typetools import uint8_float, float_uint8
 from psychopy.visual import globalVars, filters
+from psychopy.visual.windowwarp import Warper
 from psychopy.visual.windowframepack import ProjectorFramePacker
 
 GL = pyglet.gl
@@ -159,6 +160,8 @@ class GlobalDefaults(object, metaclass=GlobalDefaultsMeta):
                     trigger_wait=6,
                     capture=False,
                     small_win=False,
+                    warp=False,
+                    eyepoint=[0.5, 0.5],
                     framepack=False)
 
     def __init__(self,
@@ -179,6 +182,8 @@ class GlobalDefaults(object, metaclass=GlobalDefaultsMeta):
                  offset=None,
                  capture=None,
                  small_win=None,
+                 warp=None,
+                 eyepoint=None,
                  framepack=None):
         """
         Populate defaults if passed; units converted as necessary.
@@ -236,6 +241,12 @@ class GlobalDefaults(object, metaclass=GlobalDefaultsMeta):
         if small_win is not None:
             self.defaults['small_win'] = small_win
 
+        if warp is not None:
+            self.defaults['warp'] = warp
+
+        if eyepoint is not None:
+            self.defaults['eyepoint'] = eyepoint
+
         if framepack is not None:
             self.defaults['framepack'] = framepack
 
@@ -272,6 +283,7 @@ class MyWindow(object):
     frame_trigger_list.add(float('inf'))  # need an extra last value for indexing
     # frame_trigger_list.add(sys.maxint)  # need an extra last value for indexing
 
+    warper = None
     framepacker = None
     mirror_counter = 0
 
@@ -322,6 +334,7 @@ class MyWindow(object):
                                      screen=GlobalDefaults['screen_num'],
                                      useFBO=True,
                                      checkTiming=False,
+                                     allowStencil=GlobalDefaults['warp'],
                                      # waitBlanking=False
                                      )
 
@@ -415,6 +428,7 @@ class MyWindow(object):
                                            waitBlanking=False,
                                            useFBO=True,
                                            checkTiming=False,
+                                           allowStencil=GlobalDefaults['warp'],
                                            # do_vsync=False
                                            )
 
@@ -2405,6 +2419,15 @@ def animation_loop(to_animate, num_frames, current_time, save_loc):
     index = 0
     reps = 0
     frames = 0
+
+    if GlobalDefaults['warp']:
+        MyWindow.warper = Warper(MyWindow.win, 
+                                 warp='cylindrical', 
+                                 warpfile="", 
+                                 warpGridsize=128, 
+                                 eyepoint=GlobalDefaults['eyepoint'], 
+                                 flipHorizontal=False, 
+                                 flipVertical=False)
 
     if GlobalDefaults['framepack']:
         MyWindow.framepacker = ProjectorFramePacker(MyWindow.win)

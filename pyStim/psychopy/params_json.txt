@@ -661,6 +661,24 @@
             "hide": true
         },
 
+        "warp": {
+            "type": "choice",
+            "label": "warp",
+            "choices": [
+                "True",
+                "False"
+            ],
+            "default": false,
+            "is_child": false
+        },
+
+        "eyepoint": {
+            "type": "list", 
+            "label": "eyepoint (xy)", 
+            "default": [0.5, 0.5],
+            "is_child": false
+        },
+
         "framepack": {
             "type": "choice",
             "label": "framepack",
@@ -669,8 +687,7 @@
                 "False"
             ],
             "default": false,
-            "is_child": false,
-            "hide": true
+            "is_child": false
         },
 
         "log": {

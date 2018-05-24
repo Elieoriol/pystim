@@ -1895,12 +1895,19 @@ class MyMenuBar(wx.MenuBar):
                                                     'Override parameters',
                                                     kind=wx.ITEM_CHECK)
 
-        self.options_framepack = options_menu.Append(wx.ID_ANY, 'framepack',
-                                                    'Split RGB frames into monochrome triplets',
-                                                    kind=wx.ITEM_CHECK)
+        # self.options_warp = options_menu.Append(wx.ID_ANY, 'warp',
+        #                                         'Cylindrical warp of frame',
+        #                                         kind=wx.ITEM_CHECK)
 
-        if self.frame.parameters.get_param_value('global', 'framepack'):
-            self.options_framepack.Toggle()  # default to True
+        # if self.frame.parameters.get_param_value('global', 'warp'):
+        #     self.options_warp.Toggle()  # default to True
+
+        # self.options_framepack = options_menu.Append(wx.ID_ANY, 'framepack',
+        #                                             'Split RGB frames into monochrome triplets',
+        #                                             kind=wx.ITEM_CHECK)
+
+        # if self.frame.parameters.get_param_value('global', 'framepack'):
+        #     self.options_framepack.Toggle()  # default to True
 
         # options sub menu
         options_tools = wx.Menu()
@@ -1975,7 +1982,8 @@ class MyMenuBar(wx.MenuBar):
                 mirror_number_two: self.on_mirror_number_two,
                 mirror_number_three: self.on_mirror_number_three,
                 self.options_override: self.on_options_override,
-                self.options_framepack: self.on_options_framepack,
+                # self.options_warp: self.on_options_warp,
+                # self.options_framepack: self.on_options_framepack,
                 tools_rec_map: self.on_options_tools_rec_map,
             }
         }
@@ -2151,6 +2159,18 @@ class MyMenuBar(wx.MenuBar):
             self.frame.param_grid.show_grid()
         else:
             self.frame.param_grid.hide_grid()
+
+    def on_options_warp(self, event):
+        """
+        Handles toggling capturing
+
+        :param event:
+        :return:
+        """
+        val = self.options_warp.IsChecked()
+
+        self.frame.parameters.set_param_value('global', 'warp', val)
+        pyStim.GlobalDefaults['warp'] = val
 
     def on_options_framepack(self, event):
         """
